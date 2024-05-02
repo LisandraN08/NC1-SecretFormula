@@ -9,49 +9,59 @@ import SwiftUI
 import SwiftData
 
 struct ContentView: View {
-    @Environment(\.modelContext) private var modelContext
-    @Query private var items: [Item]
-
     var body: some View {
-        NavigationSplitView {
-            List {
-                ForEach(items) { item in
-                    NavigationLink {
-                        Text("Item at \(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))")
-                    } label: {
-                        Text(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))
+        NavigationView {
+            ZStack {
+                // Set background color using hex code
+                Color(hex: "FDF4E3")
+                    .edgesIgnoringSafeArea(.all)
+                VStack {
+                    Image("logo")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 200, height: 200)
+                        .padding()
+                    Text("SECRET FORMULA")
+                        .font(.system(size: 28, weight: .bold))
+                        .foregroundColor(.black)
+                        .padding(.bottom, 4)
+                    Text("UNLOCK THE SECRET TO PERFECT RECIPES")
+                        .font(.custom("Akshar", size: 14))
+                        .foregroundColor(.black)
+                        .padding(.bottom, 100)
+                    // Use NavigationLink to navigate to ScanPage
+                    NavigationLink(destination: ScanPage()) {
+                        Rectangle()
+                            .fill(Color(hex: "AF8260"))
+                            .frame(width: 280, height: 58) // Adjust size as needed
+                            .overlay(
+                                Text("SCAN YOUR RECIPE")
+                                    .font(.custom("Akshar", size: 18))
+                                    .fontWeight(.bold)
+                                    .foregroundColor(.white)
+                            )
+                            .cornerRadius(20) // Optional: Add corner radius for rounded corners
                     }
                 }
-                .onDelete(perform: deleteItems)
             }
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    EditButton()
-                }
-                ToolbarItem {
-                    Button(action: addItem) {
-                        Label("Add Item", systemImage: "plus")
-                    }
-                }
-            }
-        } detail: {
-            Text("Select an item")
+            .navigationBarHidden(true) // Hide navigation bar
         }
     }
+}
 
-    private func addItem() {
-        withAnimation {
-            let newItem = Item(timestamp: Date())
-            modelContext.insert(newItem)
-        }
-    }
+// Extension to create Color from hex string
+extension Color {
+    init(hex: String) {
+        let scanner = Scanner(string: hex)
+        var rgb: UInt64 = 0
 
-    private func deleteItems(offsets: IndexSet) {
-        withAnimation {
-            for index in offsets {
-                modelContext.delete(items[index])
-            }
-        }
+        scanner.scanHexInt64(&rgb)
+
+        let red = Double((rgb >> 16) & 0xFF) / 255.0
+        let green = Double((rgb >> 8) & 0xFF) / 255.0
+        let blue = Double(rgb & 0xFF) / 255.0
+
+        self.init(red: red, green: green, blue: blue)
     }
 }
 

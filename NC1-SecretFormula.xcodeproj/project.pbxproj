@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1078FB6F2BDBFD0F0086E00D /* ScanPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1078FB6E2BDBFD0F0086E00D /* ScanPage.swift */; };
+		1078FB712BDD1E710086E00D /* EditPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1078FB702BDD1E710086E00D /* EditPage.swift */; };
+		1078FB732BDD27370086E00D /* ConvertPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1078FB722BDD27370086E00D /* ConvertPage.swift */; };
 		109BFA582BDA0C6F00A31E8B /* NC1_SecretFormulaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109BFA572BDA0C6F00A31E8B /* NC1_SecretFormulaApp.swift */; };
 		109BFA5A2BDA0C6F00A31E8B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109BFA592BDA0C6F00A31E8B /* ContentView.swift */; };
 		109BFA5C2BDA0C6F00A31E8B /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109BFA5B2BDA0C6F00A31E8B /* Item.swift */; };
@@ -35,6 +38,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1078FB6E2BDBFD0F0086E00D /* ScanPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanPage.swift; sourceTree = "<group>"; };
+		1078FB702BDD1E710086E00D /* EditPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPage.swift; sourceTree = "<group>"; };
+		1078FB722BDD27370086E00D /* ConvertPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertPage.swift; sourceTree = "<group>"; };
 		109BFA542BDA0C6F00A31E8B /* NC1-SecretFormula.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NC1-SecretFormula.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		109BFA572BDA0C6F00A31E8B /* NC1_SecretFormulaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NC1_SecretFormulaApp.swift; sourceTree = "<group>"; };
 		109BFA592BDA0C6F00A31E8B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -98,6 +104,9 @@
 			children = (
 				109BFA572BDA0C6F00A31E8B /* NC1_SecretFormulaApp.swift */,
 				109BFA592BDA0C6F00A31E8B /* ContentView.swift */,
+				1078FB6E2BDBFD0F0086E00D /* ScanPage.swift */,
+				1078FB702BDD1E710086E00D /* EditPage.swift */,
+				1078FB722BDD27370086E00D /* ConvertPage.swift */,
 				109BFA5B2BDA0C6F00A31E8B /* Item.swift */,
 				109BFA5D2BDA0C6F00A31E8B /* Assets.xcassets */,
 				109BFA5F2BDA0C6F00A31E8B /* Preview Content */,
@@ -263,6 +272,9 @@
 				109BFA5A2BDA0C6F00A31E8B /* ContentView.swift in Sources */,
 				109BFA5C2BDA0C6F00A31E8B /* Item.swift in Sources */,
 				109BFA582BDA0C6F00A31E8B /* NC1_SecretFormulaApp.swift in Sources */,
+				1078FB712BDD1E710086E00D /* EditPage.swift in Sources */,
+				1078FB732BDD27370086E00D /* ConvertPage.swift in Sources */,
+				1078FB6F2BDBFD0F0086E00D /* ScanPage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -429,6 +441,7 @@
 				DEVELOPMENT_TEAM = NLFHS29F76;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app requires access to your camera to scan recipe for convert units";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -458,6 +471,7 @@
 				DEVELOPMENT_TEAM = NLFHS29F76;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app requires access to your camera to scan recipe for convert units";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
